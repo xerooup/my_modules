@@ -1,1 +1,374 @@
-{"type":"event","position":0,"operations":[{"action":"if_player_chat_message_equals","values":[{"name":"chat_messages","value":{"type":"array","values":[{"type":"text","text":"abc","parsing":"legacy"}]}}],"operations":[{"action":"game_cancel_event","values":[]},{"action":"if_variable_not_equals","values":[{"name":"compare","value":{"type":"array","values":[{"type":"text","text":"run","parsing":"legacy"}]}},{"name":"value","value":{"type":"variable","variable":"run","scope":"game"}}],"operations":[{"action":"set_variable_random_number","values":[{"name":"variable","value":{"type":"variable","variable":"repeats","scope":"local"}},{"name":"min","value":{"type":"number","number":4.0}},{"name":"max","value":{"type":"number","number":10.0}}]},{"action":"set_variable_random","values":[{"name":"values","value":{"type":"array","values":[{"type":"variable","variable":"letters","scope":"save"}]}},{"name":"variable","value":{"type":"variable","variable":"type","scope":"local"}}]},{"action":"player_send_message","values":[{"name":"messages","value":{"type":"array","values":[]}}]},{"action":"set_variable_value","values":[{"name":"variable","value":{"type":"variable","variable":"nick","scope":"local"}},{"name":"value","value":{"type":"text","text":"","parsing":"legacy"}}]},{"action":"repeat_multi_times","values":[{"name":"variable","value":{"type":"variable","variable":"currentRepeat","scope":"local"}},{"name":"amount","value":{"type":"variable","variable":"repeats","scope":"local"}}],"operations":[{"action":"set_variable_get_list_random_value","values":[{"name":"variable","value":{"type":"variable","variable":"let","scope":"local"}},{"name":"list","value":{"type":"variable","variable":"type","scope":"local"}}]},{"action":"set_variable_text_case","values":[{"name":"case_type","value":{"type":"enum","enum":"RANDOM"}},{"name":"variable","value":{"type":"variable","variable":"let","scope":"local"}},{"name":"text","value":{"type":"variable","variable":"let","scope":"local"}}]},{"action":"set_variable_text","values":[{"name":"text","value":{"type":"array","values":[{"type":"variable","variable":"nick","scope":"local"},{"type":"variable","variable":"let","scope":"local"}]}},{"name":"merging","value":{"type":"enum","enum":"CONCATENATION"}},{"name":"variable","value":{"type":"variable","variable":"nick","scope":"local"}}]},{"action":"select_entity_by_name","values":[{"name":"name_or_uuid","value":{"type":"array","values":[{"type":"text","text":"inf","parsing":"legacy"}]}}]},{"action":"entity_set_text_display_text","selection":{"type":"current"},"values":[{"name":"displayed_text","value":{"type":"array","values":[{"type":"text","text":"%display_name%:\\n\\n%var_local(nick)","parsing":"legacy"}]}}]},{"action":"control_wait","values":[{"name":"duration","value":{"type":"number","number":1.0}}]}]},{"action":"set_variable_value","values":[{"name":"variable","value":{"type":"variable","variable":"run","scope":"game"}},{"name":"value","value":{"type":"text","text":"not run","parsing":"legacy"}}]},{"action":"player_send_message","selection":{"type":"default_player"},"values":[{"name":"messages","value":{"type":"array","values":[{"type":"variable","variable":"nick","scope":"local"}]}}]}]},{"action":"else","values":[],"operations":[{"action":"player_send_message","values":[{"name":"messages","value":{"type":"array","values":[{"type":"text","text":"\u0026cПрошлый процесс ещё не завершился!","parsing":"legacy"}]}}]}]}]}],"event":"player_chat"}
+{"handlers":[{
+  "type": "event",
+  "position": 0,
+  "operations": [
+    {
+      "action": "if_player_chat_message_equals",
+      "values": [
+        {
+          "name": "chat_messages",
+          "value": {
+            "type": "array",
+            "values": [
+              {
+                "type": "text",
+                "text": "abc",
+                "parsing": "legacy"
+              }
+            ]
+          }
+        }
+      ],
+      "operations": [
+        {
+          "action": "game_cancel_event",
+          "values": []
+        },
+        {
+          "action": "if_variable_not_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "run",
+                    "parsing": "legacy"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "run",
+                "scope": "game"
+              }
+            }
+          ],
+          "operations": [
+            {
+              "action": "set_variable_random_number",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "repeats",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "min",
+                  "value": {
+                    "type": "number",
+                    "number": 4.0
+                  }
+                },
+                {
+                  "name": "max",
+                  "value": {
+                    "type": "number",
+                    "number": 10.0
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_random",
+              "values": [
+                {
+                  "name": "values",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "variable",
+                        "variable": "letters",
+                        "scope": "save"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "type",
+                    "scope": "local"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": []
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "nick",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "text",
+                    "text": "",
+                    "parsing": "legacy"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "repeat_multi_times",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "currentRepeat",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "amount",
+                  "value": {
+                    "type": "variable",
+                    "variable": "repeats",
+                    "scope": "local"
+                  }
+                }
+              ],
+              "operations": [
+                {
+                  "action": "set_variable_get_list_random_value",
+                  "values": [
+                    {
+                      "name": "variable",
+                      "value": {
+                        "type": "variable",
+                        "variable": "let",
+                        "scope": "local"
+                      }
+                    },
+                    {
+                      "name": "list",
+                      "value": {
+                        "type": "variable",
+                        "variable": "type",
+                        "scope": "local"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "set_variable_text_case",
+                  "values": [
+                    {
+                      "name": "case_type",
+                      "value": {
+                        "type": "enum",
+                        "enum": "RANDOM"
+                      }
+                    },
+                    {
+                      "name": "variable",
+                      "value": {
+                        "type": "variable",
+                        "variable": "let",
+                        "scope": "local"
+                      }
+                    },
+                    {
+                      "name": "text",
+                      "value": {
+                        "type": "variable",
+                        "variable": "let",
+                        "scope": "local"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "set_variable_text",
+                  "values": [
+                    {
+                      "name": "text",
+                      "value": {
+                        "type": "array",
+                        "values": [
+                          {
+                            "type": "variable",
+                            "variable": "nick",
+                            "scope": "local"
+                          },
+                          {
+                            "type": "variable",
+                            "variable": "let",
+                            "scope": "local"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name": "merging",
+                      "value": {
+                        "type": "enum",
+                        "enum": "CONCATENATION"
+                      }
+                    },
+                    {
+                      "name": "variable",
+                      "value": {
+                        "type": "variable",
+                        "variable": "nick",
+                        "scope": "local"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "select_entity_by_name",
+                  "values": [
+                    {
+                      "name": "name_or_uuid",
+                      "value": {
+                        "type": "array",
+                        "values": [
+                          {
+                            "type": "text",
+                            "text": "inf",
+                            "parsing": "legacy"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "entity_set_text_display_text",
+                  "selection": {
+                    "type": "current"
+                  },
+                  "values": [
+                    {
+                      "name": "displayed_text",
+                      "value": {
+                        "type": "array",
+                        "values": [
+                          {
+                            "type": "text",
+                            "text": "%display_name%:
+
+0",
+                            "parsing": "legacy"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "control_wait",
+                  "values": [
+                    {
+                      "name": "duration",
+                      "value": {
+                        "type": "number",
+                        "number": 1.0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "run",
+                    "scope": "game"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "text",
+                    "text": "not run",
+                    "parsing": "legacy"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_send_message",
+              "selection": {
+                "type": "default_player"
+              },
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "variable",
+                        "variable": "nick",
+                        "scope": "local"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "else",
+          "values": [],
+          "operations": [
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "\u0026cПрошлый процесс ещё не завершился!",
+                        "parsing": "legacy"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": "player_chat"
+}]}
